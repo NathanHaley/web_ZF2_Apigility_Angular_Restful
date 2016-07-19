@@ -1,0 +1,33 @@
+<!doctype html>
+    <html>
+      <head>
+        <script src="/js/angular.min.js"></script>
+        <script src="/js/angular-route.min.js"></script>
+        <script src="/js/angular-resource.js"></script>
+
+        
+        <script src="/js/company/project.js"></script>
+        
+      </head>
+      <body>
+        <h2>JavaScript Projects</h2>
+        <table ng-app="myProjects" ng-controller="ResourceController as projList">
+      <thead>
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="project in entries">
+        <td><a ng-href="{{project.site}}" target="_blank">{{project.name}}</a></td>
+        <td>{{project.description}}</td>
+        <td>
+          <a ng-href="#/edit/{{project.$id}}"><i class="icon-pencil"></i></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+      </body>
+    </html>
